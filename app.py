@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import tensorflow as tf
+import nltk
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 from nltk.corpus import stopwords
 import re
