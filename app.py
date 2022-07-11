@@ -12,6 +12,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from PIL import Image
 voc=1000
 nltk.download('stopwords')
+nltk.download('wordnet')
 image = Image.open('download.png')
 st.image(image, width=200)
 st.header("Sentiment Analysis")
