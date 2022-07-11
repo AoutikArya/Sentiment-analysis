@@ -8,8 +8,9 @@ import re
 import time
 from tensorflow.keras.preprocessing.text import one_hot
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-voc=1000
 from PIL import Image
+voc=1000
+nltk.download('stopwords')
 image = Image.open('download.png')
 st.image(image, width=200)
 st.header("Sentiment Analysis")
