@@ -1,6 +1,6 @@
 streamlit
 pandas
-tensorflow-gpu
+tensorflow
 nltk
 regex
 pillow
