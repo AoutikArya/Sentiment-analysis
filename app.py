@@ -13,6 +13,7 @@ from PIL import Image
 voc=1000
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 image = Image.open('download.png')
 st.image(image, width=200)
 st.header("Sentiment Analysis")
