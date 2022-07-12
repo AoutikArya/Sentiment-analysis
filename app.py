@@ -31,7 +31,7 @@ for i in range(len(data)):
     REVIEW=[wl.lemmatize(word) for word in review if word not in stopwords.words()]
     REVIEW=" ".join(REVIEW)
     k.append(REVIEW)
-oh=[one_hot(word,voc)for word in k]
+oh=[one_hot(word,VOC)for word in k]
 pad=pad_sequences(oh,padding='pre',maxlen=50)
 X=pad
 if st.button("Analyse"):
