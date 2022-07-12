@@ -7,8 +7,9 @@ import tensorflow as tf
 import nltk
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 from nltk.corpus import stopwords
-from tensorflow.keras.preprocessing.text import one_hot
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow import keras
+from keras.preprocessing.text import one_hot
+from keras.preprocessing.sequence import pad_sequences
 from PIL import Image
 VOC=1000
 nltk.download('stopwords')
