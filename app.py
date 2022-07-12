@@ -1,16 +1,16 @@
 '''System Module.'''
+import re
+import time
 import streamlit as st
 import pandas as pd
 import tensorflow as tf
 import nltk
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 from nltk.corpus import stopwords
-import re
-import time
 from tensorflow.keras.preprocessing.text import one_hot
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from PIL import Image
-voc=1000
+VOC=1000
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
@@ -26,12 +26,12 @@ ps=PorterStemmer()
 wl=WordNetLemmatizer()
 k=[]
 for i in range(len(data)):
-    review=re.sub('[^a-zA-Z]',' ',str(x[i]))
-    review=review.split()
-    review=[wl.lemmatize(word) for word in review if word not in stopwords.words()]
-    review=" ".join(review)
-    k.append(review)
-oh=[one_hot(word,voc)for word in k] 
+    REVIEW=re.sub('[^a-zA-Z]',' ',str(x[i]))
+    REVIEW=REVIEW.split()
+    REVIEW=[wl.lemmatize(word) for word in review if word not in stopwords.words()]
+    REVIEW=" ".join(REVIEW)
+    k.append(REVIEW)
+oh=[one_hot(word,voc)for word in k]
 pad=pad_sequences(oh,padding='pre',maxlen=50)
 X=pad
 if st.button("Analyse"):
@@ -43,6 +43,3 @@ if st.button("Analyse"):
             st.balloons()
         else:
             st.write('This tweet is racist/sexist.')
- 
-
-
