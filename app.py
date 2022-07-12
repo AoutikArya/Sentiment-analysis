@@ -28,7 +28,7 @@ k=[]
 for i in range(len(data)):
     REVIEW=re.sub('[^a-zA-Z]',' ',str(x[i]))
     REVIEW=REVIEW.split()
-    REVIEW=[wl.lemmatize(word) for word in review if word not in stopwords.words()]
+    REVIEW=[wl.lemmatize(word) for word in REVIEW if word not in stopwords.words()]
     REVIEW=" ".join(REVIEW)
     k.append(REVIEW)
 oh=[one_hot(word,VOC)for word in k]
